@@ -1,0 +1,61 @@
+{{#if @visibility}}
+  <BsNavbar @type="dark" @backgroundColor="dark" @collapsed={{true}} as |navbar|>
+    <div class="navbar-header">
+      <navbar.toggle />
+
+      <LinkTo @route="index" class="navbar-brand">Ma's Recipe's</LinkTo>
+    </div>
+    <navbar.content>
+      <navbar.nav class="mr-auto" as |nav|>
+        {{!-- <nav.item>
+          <nav.link-to @route="index">Home</nav.link-to>
+        </nav.item>
+        <span class="navbar-text"> | </span> --}}
+        <nav.item>
+          <nav.link-to @route="recipes">Browse</nav.link-to>
+        </nav.item>
+        <span class="navbar-text"> | </span>
+        <nav.item>
+          <nav.link-to @route="reports">Favourites</nav.link-to>
+        </nav.item>
+        {{!-- <nav.item>
+          <nav.link-to @route="reports">Reports</nav.link-to>
+        </nav.item> --}}
+        <span class="navbar-text d-none d-lg-block"> | </span>
+        <nav.item>
+          <nav.link-to @route="settings">Settings</nav.link-to>
+        </nav.item>
+        {{!-- {{#if (contains 'oncall-admin' this.currentUser.user.roles)}}
+          <nav.item>
+            <nav.link-to @route="users">Users</nav.link-to>
+          </nav.item>
+          <nav.item>
+            <nav.link-to @route="reports">Reports</nav.link-to>
+          </nav.item>
+        {{/if}} --}}
+        {{!-- <nav.item>
+          <a class="nav-link" role="button" href="#0" {{on 'click' this.logout}}>Logout</a>
+        </nav.item> --}}
+      </navbar.nav>
+      {{!-- <span class="navbar-text"><small>Your son loves you!</small></span> --}}
+    </navbar.content>
+    {{#if (not (eq this.router.currentRouteName 'index'))}}
+      <nav.item class="d-flex flex-row d-none d-md-block flex-grow-1">
+        <form class="form-inline justify-content-end d-none d-md-flex">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search for recipe's" aria-label="Search">
+          <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </nav.item>
+    {{/if}}
+  </BsNavbar>
+  {{#if (not (eq this.router.currentRouteName 'index'))}}
+    <form class="d-flex flex-row d-md-none bg-dark navbar navbar-dark mx-auto">
+      <div class="flex-grow-1">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search for recipe's" aria-label="Search">
+      </div>
+      <div class="text-right ml-2">
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+      </div>
+    </form>
+  {{/if}}
+{{/if}}
