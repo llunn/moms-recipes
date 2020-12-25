@@ -8,6 +8,7 @@ export default class ApplicationRoute extends Route {
 
   async model() {
     let appSettings = (await this.store.findAll('application')).firstObject
+    let favouriteRecipes = await this.store.findAll('favourite');
 
     if (appSettings === undefined) {
       appSettings = this.store.createRecord('application')
@@ -16,6 +17,7 @@ export default class ApplicationRoute extends Route {
     }
 
     this.appState.settings = appSettings;
+    this.appState.favourites = favouriteRecipes;
 
     return appSettings;
   }

@@ -46,7 +46,7 @@
 </div>
 <div class="card-group justify-content-center bg-light">
   {{#each this.appState.settings.categories as |category|}}
-    <div class="m-2">
+    <div {{on 'click' (fn this.onClickTransitionToRecipes category)}} class="m-2">
       <div class="card w-max w-min">
         {{!-- <img class="card-img-top" src="..." alt="Card image cap"> --}}
         <div class="card-body">
@@ -56,7 +56,6 @@
         </div>
       </div>
     </div>
-
   {{/each}}
 
 </div>

@@ -14,6 +14,13 @@ export default class IndexController extends Controller {
   }
 
   @action
+  onClickTransitionToRecipes(category) {
+    this.appState.recipeFilter = category.title;
+    this.transitionToRoute('recipes');
+
+  }
+
+  @action
   recipeCount(category) {
     // console.log(category)
     let recipes = this.model.filter((recipe) => {

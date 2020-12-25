@@ -1,0 +1,4 @@
+<div  class="p-0 m-0 text-center emt-column-recipe-controls">
+  <button {{did-insert (fn this.computeFavouritedStatus)}} {{on 'click' this.onClickFavourite}} type="button" class="btn btn-default mx-1 p-0"><FaIcon @icon="heart" @prefix={{this.favouritedPrefix}} @class={{if this.isFavourited 'text-danger' ''}}/></button>
+  <button {{on 'click' this.onClickPreview}} type="button" class="btn btn-default mx-1 p-0"><FaIcon @icon="search"/></button>
+</div>

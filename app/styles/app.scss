@@ -1,5 +1,32 @@
-
 @import "ember-bootstrap/bootstrap";
+
+.emt-column-recipe-title {
+  width: 100%;
+}
+
+.emt-column-recipe-controls {
+  min-width: 80px !important;
+  max-width: 80px !important;
+  text-align: right;
+}
+
+.emt-column-recipe-cooking-time {
+  min-width: 160px;
+  max-width: 160px;
+  text-align: center;
+}
+
+.emt-column-recipe-servings {
+  min-width: 160px;
+  max-width: 160px;
+  text-align: center;
+}
+
+.emt-column-recipe-category {
+  min-width: 200px !important;
+  max-width: 200px !important;
+  text-align: center;
+}
 
 .btn.btn-w-std {
   width: 250px !important;

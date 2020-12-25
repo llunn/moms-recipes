@@ -1,1 +1,24 @@
-{{outlet}}
+<div class="container-fluid bg-light">
+  <div class="row">
+    <div class="col">
+      <ModelsTable @data={{@model}} @columns={{this.columns}}
+        @showComponentFooter={{true}}
+        @showColumnsDropdown={{false}}
+        @useFilteringByColumns={{true}}
+        @showGlobalFilter={{false}}
+        @doFilteringByHiddenColumns={{false}}
+        @useNumericPagination={{false}}
+        @filteringIgnoreCase={{true}}
+        @multipleColumnsSorting={{true}}
+        @showCurrentPageNumberSelect={{true}}
+        @collapseNumPaginationForPagesCount={{true}}
+        @showPageSize={{true}}
+      />
+    </div>
+  </div>
+
+</div>
+
+{{!-- {{#each @model as |recipe|}}
+  <p>{{recipe.title}}</p>
+{{/each}} --}}
