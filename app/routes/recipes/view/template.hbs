@@ -1,1 +1,54 @@
-{{outlet}}
+<div class="container-fluid bg-light">
+  <div class="row">
+    <div class="col py-2 text-center">
+      <h3>{{@model.title}}</h3>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col">
+      <p><strong>Category</strong> <br>{{@model.category}}</p>
+    </div>
+    <div class="col">
+      <p><strong>Serves</strong> <br>{{@model.servings}}</p>
+    </div>
+    <div class="col">
+      <p><strong>Cooking Time</strong><br>{{@model.cookingTime}}</p>
+    </div>
+    <div class="col">
+      <p><strong>Cooking Temperature</strong><br> {{@model.temperature}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col text-center">
+      <hr>
+      <h5>Ingredients</h5>
+      <hr>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col">
+      {{#each (object-at 0 this.splitIngredients) as |ingredient|}}
+        <p>{{ingredient}}</p>
+      {{/each}}
+    </div>
+    <div class="col">
+      {{#each (object-at 1 this.splitIngredients) as |ingredient|}}
+        <p>{{ingredient}}</p>
+      {{/each}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col text-center">
+      <hr>
+      <h5>Instructions</h5>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p>{{@model.instructions}}</p>
+    </div>
+  </div>
+
+
+</div>

@@ -24,7 +24,7 @@ export default class EmtRecipeControlsComponent extends Component {
   @action
   async computeFavouritedStatus() {
     let favouritedRecipes = await Promise.all(this.appState.favourites.map((favourite) => favourite.recipe));
-    let favourites = favouritedRecipes.filterBy('id', this.args.record.id);
+    let favourites = favouritedRecipes.filterBy('id', this.args.record.get('id'));
 
     this.favouritedPrefix = (favourites.length > 0) ? "fas" : "far";
   }
